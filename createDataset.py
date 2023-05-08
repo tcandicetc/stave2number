@@ -124,6 +124,6 @@ def checkLabel_3():
 
 
 if __name__ == '__main__':
-    buildDataset() # WARNING: don't run this function or you will reset all the labels
-    # label_1()
+    # buildDataset() # WARNING: don't run this function or you will reset all the labels
+    label_1()
     # checkLabel_1()
