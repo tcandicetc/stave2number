@@ -42,10 +42,10 @@ def label_1():
         plt.show()
         tmp = input(f"label: ")
         if tmp == 'q':
-            np.save('datasetY_1', datasetY_1)
             break
         else:
             datasetY_1[i] = int(tmp)
+    np.save('datasetY_1', datasetY_1)
 
 
 def label_2():
@@ -60,10 +60,10 @@ def label_2():
         plt.show()
         tmp = input(f"label: ")
         if tmp == 'q':
-            np.save('datasetY_2', datasetY_2)
             break
         else:
             datasetY_2[i] = int(tmp)
+    np.save('datasetY_2', datasetY_2)
 
 
 def label_3():
@@ -78,10 +78,10 @@ def label_3():
         plt.show()
         tmp = input(f"label: ")
         if tmp == 'q':
-            np.save('datasetY_3', datasetY_3)
             break
         else:
             datasetY_3[i] = int(tmp)
+    np.save('datasetY_3', datasetY_3)
 
 
 def checkLabel_1():
