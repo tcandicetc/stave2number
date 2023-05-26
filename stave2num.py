@@ -23,12 +23,18 @@ def main(input_file, model):
             else:
                 cv2.putText(output_image, str(pred % 7 if (pred % 7) != 0 else 7), \
                             (int(x+dx+w/2), int(y+h+4)), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0))
+                if pred >= 8:
+                    cv2.putText(output_image, ".", \
+                            (int(x+dx+w/2+2), int(y+h-4)), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0))
+                if pred == 15:
+                    cv2.putText(output_image, ".", \
+                            (int(x+dx+w/2+2), int(y+h-7)), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0))
                 dx += 9
         y += line_space
     
-        cv2.imshow("Output Image", output_image)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+    cv2.imshow("Output Image", output_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     cv2.imwrite("output_" + input_file, output_image)
 
 if __name__ == '__main__':
