@@ -16,7 +16,7 @@ def buildDataset():
     for _ in range(4):
         for dy in range(-4, 5):
             for dx in range(450):
-                crop_img = image[y+dy:y+dy+h, x+dx:x+dx+w]
+                crop_img = image[y+dy:y+dy+h, x+dx:x+dx+w][:, :, 0]
                 datasetX.append(crop_img)
         y += line_space
 
@@ -37,7 +37,7 @@ def label_1():
     start = np.where(datasetY_1==-1)[0][0]
     
     for i in range(start, len(datasetX_1)):
-        plt.imshow(datasetX_1[i])
+        plt.imshow(datasetX_1[i], cmap='gray', vmin = 0, vmax = 255)
         plt.title(f"image {i}")
         plt.show()
         tmp = input(f"label: ")
@@ -55,7 +55,7 @@ def label_2():
     start = np.where(datasetY_2==-1)[0][0]
     
     for i in range(start, len(datasetX_2)):
-        plt.imshow(datasetX_2[i])
+        plt.imshow(datasetX_2[i], cmap='gray', vmin = 0, vmax = 255)
         plt.title(f"image {i}")
         plt.show()
         tmp = input(f"label: ")
@@ -73,7 +73,7 @@ def label_3():
     start = np.where(datasetY_3==-1)[0][0]
     
     for i in range(start, len(datasetX_3)):
-        plt.imshow(datasetX_3[i])
+        plt.imshow(datasetX_3[i], cmap='gray', vmin = 0, vmax = 255)
         plt.title(f"image {i}")
         plt.show()
         tmp = input(f"label: ")
@@ -91,7 +91,7 @@ def checkLabel_1():
         plt.figure(figsize=(10, 5))
         for j in range(10):
             plt.subplot(1, 10, j+1)
-            plt.imshow(datasetX_1[i+j])
+            plt.imshow(datasetX_1[i+j], cmap='gray', vmin = 0, vmax = 255)
             plt.axis(False)
             plt.title(f"{i+j}: {datasetY_1[i+j]}")
         plt.show()
@@ -104,7 +104,7 @@ def checkLabel_2():
         plt.figure(figsize=(10, 5))
         for j in range(10):
             plt.subplot(1, 10, j+1)
-            plt.imshow(datasetX_2[i+j])
+            plt.imshow(datasetX_2[i+j], cmap='gray', vmin = 0, vmax = 255)
             plt.axis(False)
             plt.title(f"{i+j}: {datasetY_2[i+j]}")
         plt.show()
@@ -117,7 +117,7 @@ def checkLabel_3():
         plt.figure(figsize=(10, 5))
         for j in range(10):
             plt.subplot(1, 10, j+1)
-            plt.imshow(datasetX_3[i+j])
+            plt.imshow(datasetX_3[i+j], cmap='gray', vmin = 0, vmax = 255)
             plt.axis(False)
             plt.title(f"{i+j}: {datasetY_3[i+j]}")
         plt.show()
