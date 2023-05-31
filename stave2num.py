@@ -33,18 +33,18 @@ def main(input_file, output_prefix, model):
         y += line_space
     
     print("finish")
-    cv2.imwrite(output_prefix + input_file, output_image)
+    cv2.imwrite('result/' + output_prefix + input_file, output_image)
 
 if __name__ == '__main__':
     input_file = "bee.png"
-    with gzip.open('OneVsOneModel.pgz', 'r') as f:
+    with gzip.open('model/OneVsOneModel.pgz', 'r') as f:
         OneVsOneModel = pickle.load(f)
         main(input_file, "OneVsOne_", OneVsOneModel)
 
-    with gzip.open('OneVsRestModel.pgz', 'r') as f:
+    with gzip.open('model/OneVsRestModel.pgz', 'r') as f:
         OneVsRestModel = pickle.load(f)
         main(input_file, "OneVsRest_", OneVsRestModel)
     
-    with gzip.open('KNeighborsModel.pgz', 'r') as f:
+    with gzip.open('model/KNeighborsModel.pgz', 'r') as f:
         KNeighborsModel = pickle.load(f)
         main(input_file, "KNeighbors_", KNeighborsModel)

@@ -22,17 +22,17 @@ def buildDataset():
 
     datasetSize = len(datasetX)
     print("size of dataset X =", datasetSize)
-    np.save('datasetX_1', datasetX[:len(datasetX) // 3])
-    np.save('datasetX_2', datasetX[len(datasetX) // 3 : 2 * len(datasetX) // 3])
-    np.save('datasetX_3', datasetX[2 * len(datasetX) // 3:])
-    np.save('datasetY_1', np.full(datasetSize // 3, -1, dtype=int))
-    np.save('datasetY_2', np.full(datasetSize // 3, -1, dtype=int))
-    np.save('datasetY_3', np.full(datasetSize // 3, -1, dtype=int))
+    np.save('dataset/datasetX_1', datasetX[:len(datasetX) // 3])
+    np.save('dataset/datasetX_2', datasetX[len(datasetX) // 3 : 2 * len(datasetX) // 3])
+    np.save('dataset/datasetX_3', datasetX[2 * len(datasetX) // 3:])
+    np.save('dataset/datasetY_1', np.full(datasetSize // 3, -1, dtype=int))
+    np.save('dataset/datasetY_2', np.full(datasetSize // 3, -1, dtype=int))
+    np.save('dataset/datasetY_3', np.full(datasetSize // 3, -1, dtype=int))
 
 
 def label_1():
-    datasetX_1 = np.load("datasetX_1.npy")
-    datasetY_1 = np.load("datasetY_1.npy")
+    datasetX_1 = np.load("dataset/datasetX_1.npy")
+    datasetY_1 = np.load("dataset/datasetY_1.npy")
 
     start = np.where(datasetY_1==-1)[0][0]
     
@@ -45,12 +45,12 @@ def label_1():
             break
         else:
             datasetY_1[i] = int(tmp)
-    np.save('datasetY_1', datasetY_1)
+    np.save('dataset/datasetY_1', datasetY_1)
 
 
 def label_2():
-    datasetX_2 = np.load("datasetX_2.npy")
-    datasetY_2 = np.load("datasetY_2.npy")
+    datasetX_2 = np.load("dataset/datasetX_2.npy")
+    datasetY_2 = np.load("dataset/datasetY_2.npy")
 
     start = np.where(datasetY_2==-1)[0][0]
     
@@ -63,12 +63,12 @@ def label_2():
             break
         else:
             datasetY_2[i] = int(tmp)
-    np.save('datasetY_2', datasetY_2)
+    np.save('dataset/datasetY_2', datasetY_2)
 
 
 def label_3():
-    datasetX_3 = np.load("datasetX_3.npy")
-    datasetY_3 = np.load("datasetY_3.npy")
+    datasetX_3 = np.load("dataset/datasetX_3.npy")
+    datasetY_3 = np.load("dataset/datasetY_3.npy")
 
     start = np.where(datasetY_3==-1)[0][0]
     
@@ -81,12 +81,12 @@ def label_3():
             break
         else:
             datasetY_3[i] = int(tmp)
-    np.save('datasetY_3', datasetY_3)
+    np.save('dataset/datasetY_3', datasetY_3)
 
 
 def checkLabel_1():
-    datasetX_1 = np.load("datasetX_1.npy")
-    datasetY_1 = np.load("datasetY_1.npy")
+    datasetX_1 = np.load("dataset/datasetX_1.npy")
+    datasetY_1 = np.load("dataset/datasetY_1.npy")
     for i in range(0, len(datasetX_1), 10):
         plt.figure(figsize=(10, 5))
         for j in range(10):
@@ -98,8 +98,8 @@ def checkLabel_1():
 
 
 def checkLabel_2():
-    datasetX_2 = np.load("datasetX_2.npy")
-    datasetY_2 = np.load("datasetY_2.npy")
+    datasetX_2 = np.load("dataset/datasetX_2.npy")
+    datasetY_2 = np.load("dataset/datasetY_2.npy")
     for i in range(0, len(datasetX_2), 10):
         plt.figure(figsize=(10, 5))
         for j in range(10):
@@ -111,8 +111,8 @@ def checkLabel_2():
 
 
 def checkLabel_3():
-    datasetX_3 = np.load("datasetX_3.npy")
-    datasetY_3 = np.load("datasetY_3.npy")
+    datasetX_3 = np.load("dataset/datasetX_3.npy")
+    datasetY_3 = np.load("dataset/datasetY_3.npy")
     for i in range(0, len(datasetX_3), 10):
         plt.figure(figsize=(10, 5))
         for j in range(10):
