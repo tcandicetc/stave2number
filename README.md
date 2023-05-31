@@ -33,5 +33,5 @@ We hope that there could be a numbered musical notation generator so as to accom
 
 ## Experimant Result
 
-Please refer to the sildes and videos.
+Please refer to the sildes and videos.  
 You can find out demo images in the result folder.
