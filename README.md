@@ -19,7 +19,7 @@ We hope that there could be a numbered musical notation generator so as to accom
 - numpy 1.22.4
 - pickleshare 0.7.5
 - matplotlib 3.5.2
-- sklearn 0.0.post1
+- scikit-learn 1.2.2
 
 ## Usage
 
